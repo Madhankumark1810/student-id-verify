@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spanter School</title>
+<meta utf-8>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+             background:grey;
+        }
+
+        .box {
+            background-image:linear-gradient(to right,white,grey,black);
+            width: 300px;
+            padding: 20px;
+            margin: 100px auto;
+            border-radius: 8px;
+        }
+	h2{color:white;}
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 8px 0;
+		background:#FFB5C0;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+	    
+        }
+	button:hover{
+		background:red;}
+
+        #result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>Spanter School</h2>
+        <h3>Student ID Verification</h3>
+
+        <input type="text" id="id" placeholder="Enter Student ID">
+        <input type="password" id="pass" placeholder="Enter Password">
+
+        <button onclick="check()">Verify</button>
+        <button onclick="clearData()">Clear</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function check() {
+
+            var id = document.getElementById("id").value;
+            var pass = document.getElementById("pass").value;
+
+            if ((id == "7140" || id == "7240" || id == "7340") 
+                && pass == "spanters@12") {
+
+                document.getElementById("result").innerHTML = "Verified";
+                document.getElementById("result").style.color = "green";
+
+            } else {
+
+                document.getElementById("result").innerHTML = "Not Verified";
+                document.getElementById("result").style.color = "red";
+            }
+        }
+
+        function clearData() {
+            document.getElementById("id").value = "";
+            document.getElementById("pass").value = "";
+            document.getElementById("result").innerHTML = "";
+        }
+    </script>
+
+</body>
+</html>
